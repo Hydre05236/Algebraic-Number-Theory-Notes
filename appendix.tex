@@ -1,0 +1,24 @@
+\appendix
+\section{Magma Codes}
+\begin{enumerate}
+    \item \label{MagmaCode1} The code when computing $\Delta(\mathcal{O}_L/\mathcal{O}_K)$ in Example \ref{Magma1}:
+    \begin{verbatim}
+// Define the quadratic field Q(i)
+Q_i := NumberField(x^2 + 1 : Check := false);
+
+// Define the quadratic field Q(sqrt(5))
+Q_sqrt5 := NumberField(y^2 - 5 : Check := false);
+
+// Define the composite field Q(i, sqrt(5))
+L := CompositeFields(Q_i, Q_sqrt5)[1];
+
+// Compute the ring of integers of L
+OL := Integers(L);
+
+// Compute the discriminant of the ring of integers of L over Z
+discriminant := Discriminant(OL);
+
+// Output the discriminant
+discriminant;
+    \end{verbatim}
+\end{enumerate}
